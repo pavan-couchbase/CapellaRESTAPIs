@@ -2,7 +2,7 @@
 # Generic/Built-in
 import logging
 
-from .CapellaAPIRequests import CapellaAPIRequests
+from CapellaAPIRequests import CapellaAPIRequests
 import json
 import base64
 
@@ -571,3 +571,14 @@ class CapellaAPI(CapellaAPIRequests):
         url = "{}/tenants/{}/users/{}".format(self.internal_url, tenant_id, user_id)
         resp = self.do_internal_request(url, method="DELETE")
         return resp
+
+if __name__ == '__main__':
+    c = CapellaAPI(url="https://cloudapi.dev.nonprod-project-avengers.com", secret="uAIKd0hbWyvWho63ZlluHG0uxXKEc1NMMAT6O99TeymGGwiaIAM8pWdErUiSb20O",
+                   access="29065bkjvpkYGkFjtQ1iwnIw8n5ScOaX",user="pavan.pb@couchbase.com",pwd="f&rfN2]k*8")
+    # access_key="E45WSBKJc80lZJ6V8ezPzNVRWBZ4Nuil", secret_key="baqm9XndEsij3xbNIjpo3iH3ELovCaC8E6FDZQ4SnQBVnkjtu8dpguifkKFvCvKN"
+    # print(c.get_cluster_id("clusterNewAMI_1234_720"))
+    # c.restore_from_backup(tenant_id="1a3c4544-772e-449e-9996-1203e7020b96", project_id="d9690c26-c71a-4e66-9e2b-b47d22b9766f",
+    #              cluster_id="2164ca5d-01cc-49eb-9e98-d6b99240f846", bucket_name="default")
+    # c = CapellaAPI(url="https://cloudapi.cloud.couchbase.com", secret="baqm9XndEsij3xbNIjpo3iH3ELovCaC8E6FDZQ4SnQBVnkjtu8dpguifkKFvCvKN",
+    #                access="E45WSBKJc80lZJ6V8ezPzNVRWBZ4Nuil", user= "pavan.pb@couchbase.com", pwd="f&rfN2]k*8")
+    print(c.get_cluster_id("interior-rhinoceros"))
